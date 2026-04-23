@@ -128,7 +128,8 @@ WHERE od.productCode IN (
     JOIN orders ON orderdetails.orderNumber = orders.orderNumber
     GROUP BY productCode
     HAVING COUNT(DISTINCT customerNumber) < 20
-);                          
+)
+ORDER BY e.lastName;                        
 """, conn)
 df_under_20
 
